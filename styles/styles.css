@@ -1,79 +1,387 @@
+/* || GENERAL STYLES (default styling) */
+
+@font-face {
+  font-family: 'quicksandregular';
+  src: url('../fonts/quicksand-regular-webfont.woff2') format('woff2'),
+       url('../fonts/quicksand-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'webfontregular';
+  src: url('../fonts/introheadr-base-webfont-webfont.woff2') format('woff2'),
+       url('../fonts/introheadr-base-webfont-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 html {
-  font-size: 14px; /* ten pixels high */
-  font-family: Comic Sans MS, cursive, sans-serif;
-  background-color: #ECEFFF;
+  font-size: 10px; 										
+  font-family: 'quicksandregular', Helvetica, sans-serif;  /* Alternate: "Mukta", Helvetica, sans-serif; */
+  color: #333333;
 }
 
 body {
-  width: 600px; /* forces the body to always be 600px wide */
-  margin: 0 auto;
-  background-color: #FF9500;
-  padding: 0 20px 20px 20px;
-  border: 5px solid black;
+  background-color: #e2e8f0;
+  position: relative;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0; 
+}
+
+main {
+  padding-bottom: 4rem;
+  margin: 0;
+}
+
+section {
+  margin: 2rem 10vw;
 }
 
 h1 {
-  text-align: center;
+  font-size: 4rem;
+  line-height: 1.7;
+  letter-spacing: 1px;
   margin: 0;
-  padding: 20px 0;
-  color: #ECEFFF;
-  text-shadow: 5px 5px 3px black;  
+  padding: 5px 0;
+  text-align: center;
+  /* text-shadow: 0px 0px 4px black; */
+}
+
+h2 {
+  font-size: 3rem;
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+  font-size: 2rem;
 }
 
 p, li {
-  font-size: 16px;
-  line-height: 2;
-  letter-spacing: .75px;
+  font-size: 2rem;
+  line-height: 1.7;
+  letter-spacing: 1px;
 }
 
-#navbar {
-  list-style-type:none;
-  margin:0;
-  padding:0;
-  overflow:hidden;
-  background-color:black;
-  top:0;
-  width:100%;
+aside {
+  margin: 0;
+  background-color: #e2e8f0;
+  overflow-y: scroll;
 }
-.nav {
-  float:left;
+
+aside img {
+  margin: 0 3vw;
+  border-radius: 1rem;
 }
-.nav a {
-  display:block;
-  font-size:120%;
-  color:white;
-  text-align:center;
-  padding:10px 25px;
-  text-decoration:none;
-}
-.nav a:hover {
-  background-color:dimgray;
-}
-<!-- img {
-  width: 500px;
-  height: 400px;
-  align: middle;
-  margin: 5px 5px;
-}
--->
-p {
-  text-align: center;
-  margin: 35px;
-  font-size: 14;
-}
+
 table, th, td {
   border: 1px solid black;
   border-collapse: collapse;
   padding: 8px;
-  font-size: 14;
+  font-size: 1.7rem;
 }
+
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+
 tr:nth-child(odd) {
   background-color: #ffffff;
 }
-.step {
-  background-color:black;
-  color:white;
+
+footer {
+  width: 100%;
+  background-color: #333;
 }
+
+
+/* || UTILITIES (a few things you know you want to apply to lots of different elements) */
+
+.step {
+  background-color: black;
+  color: white;
+}
+
+h1 + p::first-letter, h3 + p::first-letter {
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+a:visited{
+  color: blue;
+}
+
+h3 a:visited {
+  color: #222222;
+}
+
+
+/* || SITEWIDE (basic page layout, header, navigation styling) */
+
+nav {
+  padding: 0 2vw;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #333;
+}
+
+#logo {
+  height: 50px;
+  margin-top: 5px;
+  padding: 5px 5px;
+}
+
+button {
+  font-size: 1.75rem;
+  border-radius: .75rem;
+}
+
+.log-in {
+  margin-left: auto;  
+  margin-right: 10px;
+}
+
+button:focus, button:hover {
+  background: #BAE498;
+  color: #222222;
+}
+
+nav form {
+  border: 1px solid white;
+  display: none;
+}
+
+nav ul {
+  list-style-type: none;
+  width: 100%;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+nav li {
+  text-align: center;
+  color: #fffff0;
+}
+
+nav li:focus, nav li:hover {
+  background: #BAE498;
+  color: #222222;
+  outline: none;
+}
+
+nav li a {
+  display: inline-block;
+  width: 100%;
+  text-decoration: none;
+  font-size: 2rem;
+  color: inherit;
+}
+
+nav a:focus, nav a:hover, nav a:active {
+  background: #BAE498;
+  color: #222;
+}
+
+footer address {
+  width: 100%;
+  bottom: 0;
+}
+
+footer ul {
+  list-style-type: none;
+  margin: auto;
+  padding: 0.5rem 2vw;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+footer ul li {
+  flex: 1 200px;
+  color: #fffff0;
+}
+
+footer li > a {
+  color: lightskyblue;
+}
+
+main img {
+  float: right;
+  max-width: 300px;
+  border-radius: 1rem;
+}
+
+/* || Desktop View */   
+@media all and (min-width: 500px) {
+  /* Grid layout on hold for index pending parallax landing page design
+  body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1fr auto;
+  }
+
+  header {
+    grid-column: 1 / 3;
+    grid-row: 1;
+  }
+
+  main {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  aside {
+    grid-column: 2;
+    grid-row: 2;
+    margin: 2vw;
+    max-height: 80vh;
+  }
+
+  aside img {
+    margin: 0 1rem 2rem 1rem;
+  }
+  
+  footer {
+    grid-column: 1 / 3;
+    grid-row: 3;
+  }
+*/
+
+  nav ul {
+    width: auto;
+	  flex-direction: row;
+    justify-content: center;
+    flex: 1;
+    order: 1;
+	}
+  
+  nav form {
+    display: unset;
+    order: 4;
+    margin-left: 4rem;
+  }
+
+  nav button {
+    order: 2
+  }
+  
+	nav li {
+    padding: 0.5vw 2vw;
+    margin: 0 2vw;
+	}
+	
+  nav a:focus, nav a:hover {
+    border-radius: 1.5rem;
+    background: #BAE498;
+  }
+
+  figure {
+      float: right;
+    }
+}
+
+figure img {
+  border-radius: 1em;
+}
+
+figcaption {
+  text-align: center;
+  font-size: 1.7rem;
+}
+
+aside h2 {
+  text-shadow: 0 1px 2px yellow,
+			   0 3px 4px orange,
+			   0 5px 6px red;
+}
+
+address ul {
+  list-style-type:none;
+  overflow:hidden;
+  color: white;
+  display: flex;
+  padding: 0 25px;
+  margin: 0;
+}
+
+address ul li {
+  float: left;
+  padding: 0 2em;
+}
+
+/* || SPECIFICS */
+
+.parallax1 {
+  background-image: url("../images/andrew-at-cliffs-of-moher.jpg");
+  min-height: 100vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: .7;
+}
+
+.parallax2 {
+  background-image: url("../images/wall-shed-1.jpg");
+  min-height: 80vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: .7;
+}
+
+.parallax3 {
+  background-image: url("../images/vs-code.jpg");
+  min-height: 80vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: .7;
+}
+
+.intro {
+  position: absolute;
+  height: auto;
+  width: auto;
+  margin-top: 1vh;
+  margin-left: 50%;
+  margin-right: 3%;
+  z-index: 1;
+}
+
+.intro p {
+  font-size: 2.5rem;
+  /* font-weight: bold; */
+  text-align: center;
+  color: #222222;
+  text-shadow: 0px 0px 1px gray,
+               0px 0px 3px white;
+}
+
+.intro p::first-line {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+h2 + ul li {
+  list-style-type: none;
+}
+/*
+section img {
+  width: 40%;
+  height: auto;
+  display: inline-block;
+  margin: 1em 2em;
+  border-radius: 1em;
+}
+*/
