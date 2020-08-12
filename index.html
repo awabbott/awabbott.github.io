@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en-US">
+<html id="top" lang="en-US">
 <head>
   <meta charset="utf-8">
   <title>Home</title>
@@ -8,72 +8,73 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@500&display=swap" rel="stylesheet">
   <link href="styles/styles.css" rel="stylesheet">
-</head
+</head>
 <body>
 <header>
+  <nav>
+	<div id="menuToggle">
+	  <!--hidden checkbox used as click receiver, enabling :checked selector-->
+	  <input name="toggle" type="checkbox"/>
+	  <label for="toggle">
+	    <!--divs to be styled as hamburger buttons-->
+	    <div></div>
+	    <div></div>
+	    <div></div>
+	  </label>
+	  <!--menu will slide in from the left-->
+	  <ul id="menu">
+	    <li><a href="index.html">HOME</a></li>
+	    <li><a href="about.html">ABOUT</a></li>
+	    <li><a href="backyard-project.html">LANDSCAPING PROJECT</a></li>
+	    <li><a href="contact.html">CONTACT</a></li>
+	  </ul>
+	</div>
+  </nav>
   <div class="intro">
-	<p>Hello! My name is Andrew Abbott.</br>I am learning web development. This site demonstrates a basic proficiency in HTML & CSS while sharing a little about me.</p>
+	<p><strong>Hello! My name is Andrew Abbott.</strong><br>I am learning web development. This site demonstrates a basic proficiency in HTML & CSS while sharing a little about me.</p>
   </div>  
   <div class="parallax1"></div>
 </header>
-<!----
-<header>
-	<nav>
-	<a href="index.html"><img id="logo" src="images/pickaxe.png" alt="pickaxe"></a>
-	<button class="log-in" type="button">Log In</button>
-	<button class="sign-up" type="button"><a href="sign-up.html">Sign Up</a></button>
-	<form>																				
-		<input type="text" name="search">
-		<input type="submit" name="search" value="Search">
-	</form>
-    <ul>
-	  <li><a href="index.html">HOME</a></li>
-	  <li><a href="about.html">ABOUT</a></li>
-	  <li><a href="backyard-project.html">LANDSCAPING<br>PROJECTS</a></li>
-	  <li><a href="contact.html">CONTACT</a></li>
-	</ul>
-  </nav>
-</header>
--->
 <main>
+  <a href="#top"><img id="nav-to-top" src="images/up-arrow.svg" alt="up arrow"></a>
   <section>
-	<figure>
-		<img src="images/me-and-lincoln-hiking.jpg" alt="My son and I hiking">
-		<figcaption>My son and I hiking at Papago Park</figcaption>
-	</figure>
-		<h1>About Me</h1>
-	<p>I am the husband to an amazing wife and father to an andorable 2 year old son.</p>
-	<p>I value learning and being challenged over stagnation and complacency, which has gradually drawn me toward a career web development.</p>
-	<p>My time is usually spent enjoying every moment with my family. My main hobby is DIY house projects.</p>  
-  </section>  
+    <h1>About Me</h1>
+    <figure>
+  	  <img src="images/me-and-lincoln-hiking-400w.jpg" alt="My son and I hiking">
+	  <figcaption>My son and me hiking at Papago Park</figcaption>
+    </figure>
+	<p>I am learning web development and look forward to applying my skills to organizations that are dedicated to meaningfully helping others.</p>
+	<p>I'm married to an incredible wife and and currently spend my days raising an andorable 2 year old son.</p>
+	<p>When not spending time with family or studying web development, I'm usually working on various house projects.</p>  
+  </section>
   <div class="parallax2"></div>
   <section>
 	<h1>Landscaping Project</h1>
 	<p>My wife and I bought a <strong>massive project of a house</strong> in 2017, but we got a decent deal on it due to all the sweat equity needed. We downsized from our previous house not knowing that we had an addition to the family on the way. We've come a long way but still have plenty to do.</p>
-	<p>For the benefit of anyone else considering something similar we have documented the process and explained the steps in detail (successes and failures).</p>
-	<p><a href="backyard-project.html">Read more about the transition here</a >.</p>
+	<p>For the benefit of anyone else considering something similar we have documented our work on the backyard and explained the steps in detail (successes and failures).</p>
+	<p>You can <a href="backyard-project.html">read more about the transition here</a >.</p>
   </section>
   <div class="parallax3"></div>
   <section>
 	<h1>Web Development</h1>
-	<p>As for my future career, web development seems like an excellent fit. I decided the ideal career should have the following qualities:</p>
-	<ol>
-		<li>A good lifestyle I can enjoy with my family (ideally working from home)</li>
-		<li>Desire to be a subject matter expert in my chosen profession (I've been an expert before only to realize it was in the wrong profession)</li>
-		<li>Connection to something meaningful (e.g. helping schools/businesses/government operate more efficiently)</li>
-		<li>Good income</li>
-		<li>Difficult, challenging, somewhat prestigious</li>
-	</ol>
-	<p>Computer science fits this description, and after some research, web development seems like the fastest route. <a href="#">Feel free to read more about my journey here</a>.</p>
+	<p>After years of working for a major financial institution and, later, running my own real estate business, I've shifted focus to software development as my next (and last) career move. Web development seems like the fastest route, although I'm fascinated with how databases and the backend work together too.</p>
   </section>
 </main>
 <footer>
-  <address>
-    <ul>
-      <li>Andrew Abbott</li>
-	  <li>Mesa, AZ</li>
-	</ul>
-  </address>
+  <ul>
+	<li>Andrew Abbott</li>
+	<li>Mesa, AZ</li>
+	<li>Copyright &#169; 2020</li>
+	<li>Connect with me:
+	  <ul id="social-media-bar">
+		<li><a href="https://www.facebook.com/andrew.abbott.18062/" target="_blank"><img src="images/social-media-icons/facebook.png" alt="Facebook icon"></a></li>
+		<li><a href="https://twitter.com/andrew_abbott2/" target="_blank"><img src="images/social-media-icons/twitter.png" alt="Twitter icon"></a></li>
+		<li><a href="https://www.linkedin.com/in/andrew-abbott/" target="_blank"><img src="images/social-media-icons/linkedin.png" alt="LinkedIn icon"></a></li>
+		<li><a href="https://github.com/awabbott/" target="_blank"><img src="images/social-media-icons/github.png" alt="GitHub icon"></a></li>
+		<p>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></p>
+	  </ul>
+	</li>
+  </ul>
 </footer>
 </body>
 </html>
