@@ -300,7 +300,7 @@ figcaption {
 }
 
 .parallax3 {
-  background-image: url("../images/vs-code.jpg");
+  background-image: url("../images/vs-code.JPG");
   min-height: 80vh;
   background-attachment: fixed;
   background-position: center;
@@ -332,6 +332,7 @@ h2 + ul li {
 }
 
 section ul li {
+  margin-right: 5%;
   list-style-type: circle;
   list-style-position: inside;
 }
