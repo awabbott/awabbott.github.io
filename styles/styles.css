@@ -74,7 +74,7 @@ tr:nth-child(odd) {
 
 .img-float-r {
   width: 55%;
-  float:right;
+  float: right;
   margin: 25px;
   border-radius: 8px;
   box-shadow: 5px 5px 8px 1px rgba(0,0,0,.4);
@@ -82,10 +82,22 @@ tr:nth-child(odd) {
 
 .img-float-l {
   width: 55%;
-  float:left;
+  float: left;
   margin: 25px;
   border-radius: 8px;
   box-shadow: 5px 5px 8px 1px rgba(0,0,0,.4);
+}
+
+@media screen and (max-width: 600px) {
+  .img-float-r {
+    float: none;
+    width: 80%;
+  }
+  
+  .img-float-l {
+    float: none;
+    width: 80%;
+  }
 }
 
 p a:visited {
@@ -102,10 +114,10 @@ header nav {
 #menuToggle {
   display: block;
   position: relative;
-  width: 80vw;
+  width: 50vw;
   top: 30px;
   left: 50px;
-  z-index: 1;
+  z-index: 2;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -114,7 +126,7 @@ header nav {
 
 #menuToggle a {
   text-decoration: none;
-  color: #222222;
+  color: #fffff0;
 }
 
 #menuToggle a:hover {
@@ -132,7 +144,7 @@ header nav {
   padding: 0;
   cursor: pointer;
   opacity: 0; /* intentionally hidden */
-  z-index: 2; /* placed directly over hamburger */
+  z-index: 4; /* placed directly over hamburger */
 }
 
 /* hamburger */
@@ -144,21 +156,22 @@ header nav {
   position: relative;
   background: #222222;
   border-radius: 3px;
-  z-index: 1;
+  z-index: 3;
 }
 
 /* change color of hamburger when toggled */
 #menuToggle input:checked + label div {
-  background: #232323;
+  background: #fffff0;
 }
 
 /* use absolute positioning to place menu off-screen */
 #menu {
-  position: absolute;
-  margin: -100px 0 0 -50px;
-  padding: 50px;
+  position: fixed;
+  margin: -100px 0 0 0;
+  padding: 25px;
   padding-top: 125px;
-  background: #ededed;
+  max-width: 50vw;
+  background: #222222;
   list-style-type: none;
   border-radius: 0 0 2rem 0;
   /* hide menu to the left */
@@ -166,6 +179,7 @@ header nav {
   -webkit-transition: left 0.3s;
   -o-transition: left 0.3s;
   transition: left 0.3s;
+  z-index: 2;
 }
 
 #menu li {
@@ -213,11 +227,14 @@ footer ul {
   flex-wrap: wrap;
   padding: 0;
   align-items: center;
+  justify-content: center;
 }
 
 footer > ul > li {
   flex: 1;
+  min-width: 200px;
   color: #222222;
+  text-align: center;
 }
 
 #social-media-bar > li {
@@ -294,10 +311,10 @@ figcaption {
 
 .intro {
   position: absolute;
-  height: auto;
+  max-height: 100vh;
   width: auto;
   margin-top: 1vh;
-  margin-left: 50%;
+  margin-left: 45%;
   margin-right: 3%;
   z-index: 1;
 }
@@ -314,14 +331,19 @@ h2 + ul li {
   list-style-type: none;
 }
 
+section ul li {
+  list-style-type: circle;
+  list-style-position: inside;
+}
+
 #concrete-border {
   display: flex;
 }
 
 #concrete-border img {
   flex: 1;
-  max-width: 45%;
-  margin: 25px;
+  max-width: 40%;
+  margin: 5%;
   border-radius: 8px;
   box-shadow: 5px 5px 8px 1px rgba(0,0,0,.4);
 }
@@ -372,9 +394,12 @@ h2 + ul li {
 #landscape-header-image {
   background-image: url("../images/backyard-before-1920w.jpg");
   background-size: cover;
-  min-height: 48vh;
   max-width: 100%;
 }  
+
+#landscape-header-image-2 {
+  min-height: 48vw;
+}
 
 #landscape-header {
   height: 10vh;
